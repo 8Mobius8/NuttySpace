@@ -1,0 +1,98 @@
+[gd_scene load_steps=41 format=2]
+
+[ext_resource path="res://Ship.gd" type="Script" id=1]
+[ext_resource path="res://art/ship_static.png" type="Texture" id=2]
+[ext_resource path="res://art/ship_rotate_0.png" type="Texture" id=3]
+[ext_resource path="res://art/ship_rotate_1.png" type="Texture" id=4]
+[ext_resource path="res://art/ship_rotate_2.png" type="Texture" id=5]
+[ext_resource path="res://art/ship_rotate_3.png" type="Texture" id=6]
+[ext_resource path="res://art/ship_rotate_4.png" type="Texture" id=7]
+[ext_resource path="res://art/ship_rotate_5.png" type="Texture" id=8]
+[ext_resource path="res://art/ship_rotate_start_0.png" type="Texture" id=9]
+[ext_resource path="res://art/ship_rotate_start_1.png" type="Texture" id=10]
+[ext_resource path="res://art/ship_rotate_start_2.png" type="Texture" id=11]
+[ext_resource path="res://art/ship_rotate_start_3.png" type="Texture" id=12]
+[ext_resource path="res://art/ship_rotate_start_4.png" type="Texture" id=13]
+[ext_resource path="res://art/ship_rotate_start_5.png" type="Texture" id=14]
+[ext_resource path="res://art/ship_forward_start_0.png" type="Texture" id=15]
+[ext_resource path="res://art/ship_forward_start_1.png" type="Texture" id=16]
+[ext_resource path="res://art/ship_forward_start_2.png" type="Texture" id=17]
+[ext_resource path="res://art/ship_forward_start_3.png" type="Texture" id=18]
+[ext_resource path="res://art/ship_forward_start_4.png" type="Texture" id=19]
+[ext_resource path="res://art/ship_forward_start_5.png" type="Texture" id=20]
+[ext_resource path="res://art/ship_strafe_start_0.png" type="Texture" id=21]
+[ext_resource path="res://art/ship_strafe_start_1.png" type="Texture" id=22]
+[ext_resource path="res://art/ship_strafe_start_2.png" type="Texture" id=23]
+[ext_resource path="res://art/ship_strafe_start_3.png" type="Texture" id=24]
+[ext_resource path="res://art/ship_strafe_start_4.png" type="Texture" id=25]
+[ext_resource path="res://art/ship_strafe_start_5.png" type="Texture" id=26]
+[ext_resource path="res://art/ship_strafe_0.png" type="Texture" id=27]
+[ext_resource path="res://art/ship_strafe_1.png" type="Texture" id=28]
+[ext_resource path="res://art/ship_strafe_2.png" type="Texture" id=29]
+[ext_resource path="res://art/ship_strafe_3.png" type="Texture" id=30]
+[ext_resource path="res://art/ship_strafe_4.png" type="Texture" id=31]
+[ext_resource path="res://art/ship_strafe_5.png" type="Texture" id=32]
+[ext_resource path="res://art/ship_forward0.png" type="Texture" id=33]
+[ext_resource path="res://art/ship_forward1.png" type="Texture" id=34]
+[ext_resource path="res://art/ship_forward2.png" type="Texture" id=35]
+[ext_resource path="res://art/ship_forward3.png" type="Texture" id=36]
+[ext_resource path="res://art/ship_forward4.png" type="Texture" id=37]
+[ext_resource path="res://art/ship_forward5.png" type="Texture" id=38]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "rotate",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": false,
+"name": "rotateStart",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ) ],
+"loop": false,
+"name": "forwardStart",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ) ],
+"loop": false,
+"name": "strafeStart",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ) ],
+"loop": true,
+"name": "strafe",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ) ],
+"loop": true,
+"name": "forward",
+"speed": 5.0
+} ]
+
+[sub_resource type="ConvexPolygonShape2D" id=2]
+
+[node name="Ship" type="RigidBody2D"]
+collision_layer = 2
+collision_mask = 13
+contacts_reported = 1
+contact_monitor = true
+script = ExtResource( 1 )
+thruster_magnitude = 250
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "rotateStart"
+frame = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.085691, 3.01547 )
+scale = Vector2( 3, 3.5 )
+shape = SubResource( 2 )
