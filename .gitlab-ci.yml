@@ -59,6 +59,7 @@ deploy-github-pages:
     - git checkout gh-pages
     - rm -f *.md
     - mv build/web/** .
+    - env | sort
     - git config user.email $GIT_EMAIL
     - git config user.name $GIT_USERNAME
     - git add -A
