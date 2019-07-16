@@ -55,8 +55,7 @@ deploy-github-pages:
   dependencies:
     - web
   script:
-    - git remote add "github" "$REMOTE_URL"
-    - git fetch
+    - git remote -vv
     - git checkout gh-pages
     - rm -f *.md
     - mv build/web/** .
