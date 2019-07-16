@@ -55,8 +55,7 @@ deploy-github-pages:
   dependencies:
     - web
   script:
-    - git remote -vv
-    - git checkout gh-pages
+    - git checkout origin/gh-pages
     - rm -f *.md
     - mv build/web/** .
     - git config user.email $GIT_EMAIL
