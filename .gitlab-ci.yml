@@ -55,7 +55,6 @@ deploy-github-pages:
   dependencies:
     - web
   script:
-    - env | sort
     - git remote add --fetch githubcom "$GIT_URL"
     - git checkout gh-pages
     - rm -f *.md
