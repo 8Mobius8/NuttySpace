@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-export var thruster_magnitude = 20
+export var thruster_magnitude = 350
 export var rthruster_magnitude = 1000
 var screen_size
 

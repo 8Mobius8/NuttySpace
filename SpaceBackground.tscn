@@ -1,0 +1,69 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Twinkle.tres" type="Texture" id=1]
+[ext_resource path="res://art/Galaxy.png" type="Texture" id=2]
+
+[sub_resource type="NoiseTexture" id=1]
+flags = 5
+
+[sub_resource type="TileSet" id=2]
+0/name = "Twinkle.tres 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 128, 128 )
+0/tile_mode = 1
+0/autotile/bitmask_mode = 0
+0/autotile/bitmask_flags = [  ]
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 32, 32 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": null,
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[node name="SpaceBackground" type="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 512.481, 308.518 )
+scale = Vector2( 2.11638, 1.33873 )
+z_index = -4
+texture = SubResource( 1 )
+
+[node name="Floaties" type="ParallaxLayer" parent="."]
+z_index = -1
+motion_mirroring = Vector2( 100, 100 )
+
+[node name="Twinkles" type="ParallaxLayer" parent="."]
+z_index = -1
+motion_scale = Vector2( 0.2, 0.2 )
+motion_offset = Vector2( 150, 150 )
+motion_mirroring = Vector2( 200, 150 )
+
+[node name="TileMap" type="TileMap" parent="Twinkles"]
+position = Vector2( 148.326, 153.383 )
+tile_set = SubResource( 2 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 0, 393227, 0, 0 )
+
+[node name="Galaxies" type="ParallaxLayer" parent="."]
+position = Vector2( 402.781, 406.46 )
+z_index = -2
+motion_scale = Vector2( 0.01, 0.01 )
+motion_mirroring = Vector2( 800, 800 )
+
+[node name="Sprite" type="Sprite" parent="Galaxies"]
+position = Vector2( -154.643, -232.839 )
+texture = ExtResource( 2 )
+centered = false

@@ -96,3 +96,8 @@ frame = 5
 position = Vector2( -0.085691, 3.01547 )
 scale = Vector2( 3, 3.5 )
 shape = SubResource( 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
