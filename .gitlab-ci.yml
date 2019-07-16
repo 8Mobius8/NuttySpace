@@ -55,12 +55,13 @@ deploy-github-pages:
   dependencies:
     - web
   script:
+    - git remote add "github" "$REMOTE_URL"
+    - git fetch
     - git checkout gh-pages
     - rm -f *.md
     - mv build/web/** .
     - git config user.email $GIT_EMAIL
     - git config user.name $GIT_USERNAME
-    - git remote add github $REMOTE_URL
     - git add -A
     - 'git commit -m "ci: Deploy GitHub Page $EXPORT_NAME-$CI_JOB_NAME$" -m "Deploy from GitLab pipeline \#$CI_PIPELINE_ID"'
     - git push github gh-pages -f
