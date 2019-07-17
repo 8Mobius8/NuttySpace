@@ -11,26 +11,11 @@ flags = 5
 0/texture = ExtResource( 1 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
-0/region = Rect2( 0, 0, 128, 128 )
-0/tile_mode = 1
-0/autotile/bitmask_mode = 0
-0/autotile/bitmask_flags = [  ]
-0/autotile/icon_coordinate = Vector2( 0, 0 )
-0/autotile/tile_size = Vector2( 32, 32 )
-0/autotile/spacing = 0
-0/autotile/occluder_map = [  ]
-0/autotile/navpoly_map = [  ]
-0/autotile/priority_map = [  ]
-0/autotile/z_index_map = [  ]
+0/region = Rect2( 0, 0, 0, 0 )
+0/tile_mode = 0
 0/occluder_offset = Vector2( 0, 0 )
 0/navigation_offset = Vector2( 0, 0 )
-0/shapes = [ {
-"autotile_coord": Vector2( 0, 0 ),
-"one_way": false,
-"one_way_margin": 1.0,
-"shape": null,
-"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
-} ]
+0/shapes = [  ]
 0/z_index = 0
 
 [node name="SpaceBackground" type="ParallaxBackground"]
@@ -47,15 +32,19 @@ motion_mirroring = Vector2( 100, 100 )
 
 [node name="Twinkles" type="ParallaxLayer" parent="."]
 z_index = -1
-motion_scale = Vector2( 0.2, 0.2 )
+motion_scale = Vector2( 0.05, 0.05 )
 motion_offset = Vector2( 150, 150 )
-motion_mirroring = Vector2( 200, 150 )
+motion_mirroring = Vector2( 800, 800 )
 
 [node name="TileMap" type="TileMap" parent="Twinkles"]
-position = Vector2( 148.326, 153.383 )
+scale = Vector2( 0.1, 0.1 )
 tile_set = SubResource( 2 )
+cell_size = Vector2( 256, 256 )
+cell_custom_transform = Transform2D( 1, 1, 0, 1, 0, 0 )
+collision_layer = 0
+collision_mask = 0
 format = 1
-tile_data = PoolIntArray( 0, 0, 0, 393227, 0, 0 )
+tile_data = PoolIntArray( 0, 0, 0, 19, 0, 0, 65542, 0, 0, 65564, 0, 0, 131073, 0, 0, 131096, 0, 0, 196624, 0, 0, 262155, 0, 0, 327699, 0, 0, 327706, 0, 0, 393217, 0, 0, 393224, 0, 0, 393229, 0, 0, 524324, 0, 0, 589853, 0, 0, 655379, 0, 0, 720896, 0, 0, 720903, 0, 0, 720921, 0, 0, 786447, 0, 0, 917514, 0, 0, 1048579, 0, 0, 1048595, 0, 0, 1179664, 0, 0, 1179674, 0, 0, 1245186, 0, 0, 1310725, 0, 0, 1376275, 0, 0, 1441803, 0, 0, 1441816, 0, 0, 1507344, 0, 0, 1572892, 0, 0, 1638402, 0, 0, 1638418, 0, 0, 1703946, 0, 0, 1769475, 0, 0, 1769496, 0, 0 )
 
 [node name="Galaxies" type="ParallaxLayer" parent="."]
 position = Vector2( 402.781, 406.46 )
