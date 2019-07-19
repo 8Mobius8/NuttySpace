@@ -11,6 +11,6 @@ position = Vector2( 567.287, 300.382 )
 
 [node name="Ship" parent="." instance=ExtResource( 2 )]
 position = Vector2( 184.431, 492.258 )
-thruster_magnitude = 300
+thruster_magnitude = 100
 
 [node name="SpaceBackground" parent="." instance=ExtResource( 3 )]

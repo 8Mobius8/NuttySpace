@@ -28,9 +28,10 @@ texture = SubResource( 1 )
 
 [node name="Floaties" type="ParallaxLayer" parent="."]
 z_index = -1
-motion_mirroring = Vector2( 100, 100 )
+motion_mirroring = Vector2( 800, 800 )
 
 [node name="Twinkles" type="ParallaxLayer" parent="."]
+editor/display_folded = true
 z_index = -1
 motion_scale = Vector2( 0.05, 0.05 )
 motion_offset = Vector2( 150, 150 )
@@ -47,12 +48,14 @@ format = 1
 tile_data = PoolIntArray( 0, 0, 0, 19, 0, 0, 65542, 0, 0, 65564, 0, 0, 131073, 0, 0, 131096, 0, 0, 196624, 0, 0, 262155, 0, 0, 327699, 0, 0, 327706, 0, 0, 393217, 0, 0, 393224, 0, 0, 393229, 0, 0, 524324, 0, 0, 589853, 0, 0, 655379, 0, 0, 720896, 0, 0, 720903, 0, 0, 720921, 0, 0, 786447, 0, 0, 917514, 0, 0, 1048579, 0, 0, 1048595, 0, 0, 1179664, 0, 0, 1179674, 0, 0, 1245186, 0, 0, 1310725, 0, 0, 1376275, 0, 0, 1441803, 0, 0, 1441816, 0, 0, 1507344, 0, 0, 1572892, 0, 0, 1638402, 0, 0, 1638418, 0, 0, 1703946, 0, 0, 1769475, 0, 0, 1769496, 0, 0 )
 
 [node name="Galaxies" type="ParallaxLayer" parent="."]
+editor/display_folded = true
 position = Vector2( 402.781, 406.46 )
 z_index = -2
 motion_scale = Vector2( 0.01, 0.01 )
-motion_mirroring = Vector2( 800, 800 )
+motion_mirroring = Vector2( 1000, 1000 )
 
 [node name="Sprite" type="Sprite" parent="Galaxies"]
 position = Vector2( -154.643, -232.839 )
+scale = Vector2( 0.25, 0.25 )
 texture = ExtResource( 2 )
 centered = false
