@@ -63,4 +63,4 @@ deploy-github-pages:
     - git add -A
     - 'git commit -m "ci: Deploy GitHub Page $EXPORT_NAME-$CI_JOB_NAME$" -m "Deploy from GitLab pipeline \#$CI_PIPELINE_ID"'
     - git remote add github "$GIT_URL"
-    - git push githubcom gh-pages
+    - git push github gh-pages
