@@ -64,12 +64,15 @@ deploy-github-pages:
     - 'git commit -m "ci: Deploy GitHub Page $EXPORT_NAME-$CI_JOB_NAME$" -m "Deploy from GitLab pipeline \#$CI_PIPELINE_ID"'
     - git remote add github "$GIT_URL"
     - git push github gh-pages
+  only:
+    - master
 
 pages:
   stage: deploy
   dependencies:
     - web
   script:
+    - mkdir public
     - mv build/web/** ./public/
   artifacts:
     paths:
