@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://art/enemy_miskito_idle0.png" type="Texture" id=1]
+[ext_resource path="res://art/enemy_miskito_idle1.png" type="Texture" id=2]
+[ext_resource path="res://art/enemy_miskito_idle2.png" type="Texture" id=3]
+[ext_resource path="res://art/enemy_miskito_idle3.png" type="Texture" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[node name="Miskito" type="RigidBody2D"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "idle"
+frame = 1
+playing = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -0.0254059, -16.4912, 9.68742, -10.2333, 15.7498, -6.58283, 15.4238, 6.12858, 13.8594, 9.58347, 11.5126, 16.1673, -11.6938, 15.9718, -14.0405, 8.86642, -16.0613, 4.49891, -15.605, -6.51764, -9.67304, -9.97254 )

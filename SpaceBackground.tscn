@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Twinkle.tres" type="Texture" id=1]
 [ext_resource path="res://art/Galaxy.png" type="Texture" id=2]
@@ -6,11 +6,17 @@
 [sub_resource type="NoiseTexture" id=1]
 flags = 5
 
+[sub_resource type="Shader" id=3]
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = SubResource( 3 )
+
 [sub_resource type="TileSet" id=2]
 0/name = "Twinkle.tres 0"
 0/texture = ExtResource( 1 )
 0/tex_offset = Vector2( 0, 0 )
-0/modulate = Color( 1, 1, 1, 1 )
+0/material = SubResource( 4 )
+0/modulate = Color( 0.556863, 0.560784, 0.635294, 1 )
 0/region = Rect2( 0, 0, 0, 0 )
 0/tile_mode = 0
 0/occluder_offset = Vector2( 0, 0 )
@@ -26,14 +32,24 @@ scale = Vector2( 2.11638, 1.33873 )
 z_index = -4
 texture = SubResource( 1 )
 
-[node name="Floaties" type="ParallaxLayer" parent="."]
-z_index = -1
+[node name="Dust" type="ParallaxLayer" parent="."]
+editor/display_folded = true
 motion_mirroring = Vector2( 800, 800 )
+
+[node name="TileMap2" type="TileMap" parent="Dust"]
+scale = Vector2( 0.075, 0.075 )
+tile_set = SubResource( 2 )
+cell_size = Vector2( 256, 256 )
+cell_custom_transform = Transform2D( 1, 1, 0, 1, 0, 0 )
+collision_layer = 0
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 0, 0, 0, 19, 0, 0, 65564, 0, 0, 131073, 0, 0, 196624, 0, 0, 327706, 0, 0, 393253, 0, 0, 589877, 0, 0, 655419, 0, 0, 720896, 0, 0, 720940, 0, 0, 720954, 0, 0, 786439, 0, 0, 786447, 0, 0, 786458, 0, 0, 917540, 0, 0, 1179659, 0, 0, 1179687, 0, 0, 1245211, 0, 0, 1507344, 0, 0, 1572892, 0, 0, 1638402, 0, 0, 1703944, 0, 0, 1703987, 0, 0, 1769496, 0, 0, 1900558, 0, 0, 1900584, 0, 0, 2031646, 0, 0, 2359299, 0, 0, 2359307, 0, 0, 2359310, 0, 0, 2424855, 0, 0, 2490424, 0, 0, 2555946, 0, 0, 2621467, 0, 0, 2621499, 0, 0, 2686986, 0, 0, 3014695, 0, 0 )
 
 [node name="Twinkles" type="ParallaxLayer" parent="."]
 editor/display_folded = true
 z_index = -1
-motion_scale = Vector2( 0.05, 0.05 )
+motion_scale = Vector2( 0.025, 0.025 )
 motion_offset = Vector2( 150, 150 )
 motion_mirroring = Vector2( 800, 800 )
 
@@ -45,7 +61,7 @@ cell_custom_transform = Transform2D( 1, 1, 0, 1, 0, 0 )
 collision_layer = 0
 collision_mask = 0
 format = 1
-tile_data = PoolIntArray( 0, 0, 0, 19, 0, 0, 65542, 0, 0, 65564, 0, 0, 131073, 0, 0, 131096, 0, 0, 196624, 0, 0, 262155, 0, 0, 327699, 0, 0, 327706, 0, 0, 393217, 0, 0, 393224, 0, 0, 393229, 0, 0, 524324, 0, 0, 589853, 0, 0, 655379, 0, 0, 720896, 0, 0, 720903, 0, 0, 720921, 0, 0, 786447, 0, 0, 917514, 0, 0, 1048579, 0, 0, 1048595, 0, 0, 1179664, 0, 0, 1179674, 0, 0, 1245186, 0, 0, 1310725, 0, 0, 1376275, 0, 0, 1441803, 0, 0, 1441816, 0, 0, 1507344, 0, 0, 1572892, 0, 0, 1638402, 0, 0, 1638418, 0, 0, 1703946, 0, 0, 1769475, 0, 0, 1769496, 0, 0 )
+tile_data = PoolIntArray( 0, 0, 0, 19, 0, 0, 65542, 0, 0, 65564, 0, 0, 131073, 0, 0, 131096, 0, 0, 327699, 0, 0, 327706, 0, 0, 393224, 0, 0, 393229, 0, 0, 524324, 0, 0, 589853, 0, 0, 720896, 0, 0, 720921, 0, 0, 786447, 0, 0, 1048579, 0, 0, 1048595, 0, 0, 1179664, 0, 0, 1179674, 0, 0, 1310725, 0, 0, 1441816, 0, 0, 1572892, 0, 0, 1638402, 0, 0, 1638418, 0, 0, 1703946, 0, 0, 1769475, 0, 0, 1769496, 0, 0 )
 
 [node name="Galaxies" type="ParallaxLayer" parent="."]
 editor/display_folded = true

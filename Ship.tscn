@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://Ship.gd" type="Script" id=1]
 [ext_resource path="res://art/ship_static.png" type="Texture" id=2]
@@ -38,6 +38,7 @@
 [ext_resource path="res://art/ship_forward3.png" type="Texture" id=36]
 [ext_resource path="res://art/ship_forward4.png" type="Texture" id=37]
 [ext_resource path="res://art/ship_forward5.png" type="Texture" id=38]
+[ext_resource path="res://art/player_bullet_0.png" type="Texture" id=39]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -79,25 +80,51 @@ animations = [ {
 
 [sub_resource type="ConvexPolygonShape2D" id=2]
 
+[sub_resource type="ParticlesMaterial" id=3]
+emission_shape = 4
+emission_point_count = 1
+flag_disable_z = true
+flatness = 0.45
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 1.0
+scale = 0.25
+scale_random = 0.01
+
 [node name="Ship" type="RigidBody2D"]
+position = Vector2( -5.6545, 0 )
 collision_layer = 2
 collision_mask = 13
 contacts_reported = 1
 contact_monitor = true
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
 thruster_magnitude = 250
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+visible = false
 frames = SubResource( 1 )
-animation = "rotateStart"
-frame = 5
+animation = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( -0.085691, 3.01547 )
 scale = Vector2( 3, 3.5 )
 shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
+visible = false
 current = true
 drag_margin_h_enabled = false
 drag_margin_v_enabled = false
+
+[node name="Particles2D" type="Particles2D" parent="."]
+rotation = 1.5708
+lifetime = 2.0
+local_coords = false
+draw_order = 1
+process_material = SubResource( 3 )
+texture = ExtResource( 39 )
